@@ -1,0 +1,226 @@
+*, :before, :after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Titan One', sans-serif;
+  font-size: 3.5em;
+  text-align: center;
+  color: white;
+  margin-top: 48px;
+}
+
+body {
+  padding: 16px;
+  background-image: url(bg2.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+
+p, h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+.start-div {
+  position: absolute;
+  top:-100%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  text-align: center;
+  font-size: 1.4em;
+  background-color: orange;
+  padding: 48px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  z-index: 10;
+}
+
+.start-div.begin {
+  top: 30%;
+  animation: fadeIn 1s forwards cubic-bezier(.12,.13,.74,1.32);
+  -webkit-animation: fadeIn 1s forwards cubic-bezier(.12,.13,.74,1.32);
+}
+
+@keyframes fadeIn {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 30%;
+  }
+}
+
+.start-div:before {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  content: "";
+  background-color: green;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.start-div:after {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  content: "";
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+form {
+  margin-top: 16px;
+}
+
+button, select {
+  padding:2px 6px;
+}
+
+.question-div {
+  position: absolute;
+  min-width: 1000px;
+  min-height: 400px;
+  top: 25%;
+  left: -150%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 4px 12px rgba(0,0,0,0.1);
+  padding: 4px 8px;
+}
+
+.question-div.current {
+  left: 50%;
+  animation: fromLeft 1.8s forwards cubic-bezier(.12,.13,.74,1.32);
+  -webkit-animation: fromLeft 1.8s forwards cubic-bezier(.12,.13,.74,1.32);
+}
+
+@keyframes fromLeft {
+  from {
+    left: -150%;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+.question-div.get-out {
+  animation: toRight 1.8s forwards linear;
+  -webkit-animation: toRight 1.8s forwards linear;
+}
+
+@keyframes toRight {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 200%;
+  }
+}
+
+.question-div h3 {
+  margin-bottom: 24px;
+}
+
+.question-div button:first-of-type {
+  margin-top: 24px;
+}
+
+.bolder {
+  font-weight: bolder;
+}
+
+.answer {
+  padding: 0 12px;
+  margin: 4px 0;
+  cursor: pointer;
+}
+
+.answer:hover {
+  background-color: rgba(0,0,255,0.2);
+}
+
+.score-div {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  z-index: 999;
+  background-color: #fff;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  padding: 48px 96px 24px;
+  text-align: center;
+  transition: box-shadow 1s;
+  -webkit-transition: box-shadow 1s;
+  -moz-transition: box-shadow 1s;
+  -ms-transition: box-shadow 1s;
+  -o-transition: box-shadow 1s;
+  font-size: 1.4em;
+}
+
+.score-div.visible {
+  animation: fadeIn 1s forwards cubic-bezier(.12,.13,.74,1.32);
+  -webkit-animation: fadeIn 1s forwards cubic-bezier(.12,.13,.74,1.32);
+  box-shadow: 0 0 0 999vw rgba(0,0,0,0.7);
+}
+
+.replay {
+  margin: 24px 0 0 0;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.replay:hover {
+  color: #0059DD;
+}
